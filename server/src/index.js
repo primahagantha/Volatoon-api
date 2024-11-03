@@ -11,7 +11,6 @@ import goalController from "./goal/goal.controller.js"
 // import unknownEndPoint from './middleware/unknownEndpoint.js';
 const app = express()
 
-const port = 2000
 dotenv.config()
 
 app.use(express.json())
@@ -28,6 +27,4 @@ app.use('/api/', transactionController)
 app.use('/api/', categoryController)
 app.use('/api/', goalController)
 
-app.listen(port, () => {
-  console.log(`BreadFinance is listening on port ${port}`)
-})
+module.exports = app;
