@@ -11,7 +11,8 @@ const validate = (req, res, next) => {
     }
 
     function validPassword(password) {
-        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password);
+        return /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_\+\-=\[\]{};':"\\|,.<>\/?]{6,}$/
+        .test(password);
     }
 
     if (!validEmail(email)) {
