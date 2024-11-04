@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('BreadFinance api!')
+  res.send('Volatoon api!')
 })
 
 app.use('/api/auth/', authController)
