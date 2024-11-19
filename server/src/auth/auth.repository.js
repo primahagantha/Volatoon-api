@@ -30,8 +30,6 @@ const addUserDb = async (userData) => {
     return user
 }
 
-
-
 export {
     findUserByEmailDb,
     findUserByUsernameDb,

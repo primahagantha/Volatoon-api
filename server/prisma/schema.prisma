@@ -21,5 +21,23 @@ model User {
   name        String?
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
+  Bookmark    Bookmark[]
+  History     History[]
+}
+
+model Bookmark {
+   bookmark_id   String      @id @default(cuid())
+   user          User        @relation(fields: [userId], references: [user_id])
+   userId        String
+   komik_id     String 
+   createdAt   DateTime      @default(now())
+}
+
+model History {
+   history_id     String      @id @default(cuid())
+   user           User        @relation(fields: [userId], references: [user_id])
+   userId         String
+   komik_id     String 
+   createdAt   DateTime      @default(now())
 }
 
