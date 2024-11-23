@@ -8,14 +8,12 @@ router.get("/bookmark", authenticateToken, async (req, res) => {
     const { userId } = req.user;
 
     try {
-        const bookMarks = await findBookmark(userId)
+        const data = await findBookmark(userId)
 
         res.status(200).json({
             status: 200,
             message: "User Bookmark retrieved successfully",
-            data: {
-                bookMarks
-            }
+            data
         })
     } catch (err) {
         return res.status(401).json({
