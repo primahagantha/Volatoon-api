@@ -14,7 +14,7 @@ router.get("/bookmark", authenticateToken, async (req, res) => {
             status: 200,
             message: "User Bookmark retrieved successfully",
             data: {
-                bookMarks
+                ...bookMarks
             }
         })
     } catch (err) {
