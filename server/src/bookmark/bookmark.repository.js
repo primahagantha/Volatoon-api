@@ -1,7 +1,7 @@
 import prisma from "../config/db.config.js"
 
 const findBookmarkByuserIdDb = async (userId) => {
-    const result = await prisma.bookmark.findUnique({
+    const result = await prisma.bookmark.findMany({
         where: { userId }
     })
 
