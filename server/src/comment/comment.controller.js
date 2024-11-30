@@ -23,8 +23,8 @@ router.get("/comments/:chapterId", authenticateToken, async (req, res) => {
 router.post("/comments", authenticateToken, async (req, res) => {
     try {
         const { userId } = req.user;
-        const { chapter_id, content } = req.body;
-        const comment = await addComment(userId, chapter_id, content)
+        const { komik_id, content } = req.body;
+        const comment = await addComment(userId, komik_id, content)
         res.status(201).json({
             status: 201,
             message: "Comment added successfully",

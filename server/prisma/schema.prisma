@@ -30,23 +30,23 @@ model Bookmark {
    bookmark_id   String      @id @default(cuid())
    user          User        @relation(fields: [userId], references: [user_id])
    userId        String
-   komik_id     String 
-   createdAt   DateTime      @default(now())
+   komik_id      String 
+   createdAt     DateTime      @default(now())
 }
 
 model History {
    history_id     String      @id @default(cuid())
    user           User        @relation(fields: [userId], references: [user_id])
    userId         String
-   komik_id     String 
-   createdAt   DateTime      @default(now())
+   komik_id       String 
+   createdAt      DateTime      @default(now())
 }
 
 model Comment {
   comment_id String   @id @default(cuid())
   user       User     @relation(fields: [userId], references: [user_id])
   userId     String
-  chapter_id String
+  komik_id   String
   content    String
   likes      Int      @default(0) 
   createdAt  DateTime @default(now())
