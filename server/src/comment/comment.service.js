@@ -1,13 +1,13 @@
 import { findCommentsByChapterIdDb, addCommentDb, deleteCommentDb, likeCommentDb } from "./comment.repository.js"
 
-const getComments = async (komikId) => {
-    const comments = await findCommentsByChapterIdDb(komikId)
+const getComments = async (chapterId) => {
+    const comments = await findCommentsByChapterIdDb(chapterId)
     return comments
 }
 
-const addComment = async (userId, komikId, content) => {
+const addComment = async (userId, chapterId, content) => {
     if (!content.trim()) throw new Error("Comment cannot be empty")
-    const comment = await addCommentDb(userId, komikId, content)
+    const comment = await addCommentDb(userId, chapterId, content)
     return comment
 }
 

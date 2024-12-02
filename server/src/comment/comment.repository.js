@@ -1,8 +1,8 @@
 import prisma from "../config/db.config.js"
 
-const findCommentsByChapterIdDb = async (komikId) => {
+const findCommentsByChapterIdDb = async (chapterId) => {
     const comments = await prisma.comment.findMany({
-        where: { komik_id: komikId },
+        where: { chapter_id: chapterId },
         include: {
             user: {
                 select: {
@@ -18,11 +18,11 @@ const findCommentsByChapterIdDb = async (komikId) => {
     return comments
 }
 
-const addCommentDb = async (userId, komikId, content) => {
+const addCommentDb = async (userId, chapterId, content) => {
     const comment = await prisma.comment.create({
         data: {
             userId,
-            komik_id: komikId,
+            chapter_id: chapterId,
             content
         },
         include: {
