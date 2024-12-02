@@ -24,5 +24,5 @@ app.use("/api/", bookmarkController);
 app.use("/api/", commentController);
 
 app.listen(port, () => {
-  console.log(`Volatoon is listening on port ${port}`);
+  console.log(`Volatoon is listening on port ${port} now`);
 });
